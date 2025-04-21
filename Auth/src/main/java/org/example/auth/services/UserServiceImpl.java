@@ -184,7 +184,10 @@ public class UserServiceImpl implements UserService {
 
             return Arrays.stream(users)
                     .map(user -> {
+                        User user1 = userRepository.findByUsername(user.getUsername())
+                                .orElseThrow(() -> new RuntimeException("Utilisateur introuvable"));
                         UserResponse dto = new UserResponse();
+                        dto.setId(user1.getId());
                         dto.setUsername(user.getUsername());
                         dto.setEmail(user.getEmail());
                         return dto;
