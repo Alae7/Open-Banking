@@ -91,7 +91,7 @@ public class UserServiceImpl implements UserService {
             } else if (httpResponse.statusCode() == 409) {
                 throw new RuntimeException("User already exists.");
             } else if (httpResponse.statusCode() == 403) {
-                System.out.println("⚠️ 403 Forbidden — fallback to user search");
+                System.out.println(" 403 Forbidden — fallback to user search");
                 List<UserRepresentation> users = keycloak.realm(realm).users().search(request.getUsername());
                 if (users.isEmpty()) {
                     throw new RuntimeException("User possibly created but not found.");

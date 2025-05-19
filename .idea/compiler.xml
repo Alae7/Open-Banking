@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="discovry" />
         <module name="Adaptiv_IT" />
-        <module name="gateway" />
         <module name="Auth" />
       </profile>
       <profile name="Annotation profile for gateway" enabled="true">
@@ -19,6 +18,7 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
   </component>
